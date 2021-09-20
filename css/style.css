@@ -53,6 +53,7 @@ main {
   /* overflow: hidden; */
 }
 
+/* ELEMENTS */
 .meeting__container {
   display: flex;
   flex-wrap: wrap;
@@ -62,8 +63,6 @@ main {
   padding-bottom: 50px;
   overflow: hidden;
 }
-
-/* ELEMENTS */
 .view-bar__button {
   background-color: var(--secondary-background);
   color: var(--primary-text);
@@ -121,14 +120,6 @@ main {
   display: flex;
   position: relative;
 }
-
-/* MODIFIERS */
-.meeting__navigator--left {
-  left: 0;
-}
-.meeting__navigator--right {
-  right: 0;
-}
 .meeting__container__participant {
   min-width: 250px;
   min-height: 100px;
@@ -158,6 +149,26 @@ main {
   left: 0;
   bottom: 0;
 }
+.action-bar__button__content__icon__number::after {
+  content: "28";
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  vertical-align: top;
+}
+.meeting__container__participant:hover
+  .meeting__container__participant__info::before {
+  content: "\f3c9";
+  color: var(--primary-text);
+}
+
+/* MODIFIERS */
+.meeting__navigator--left {
+  left: 0;
+}
+.meeting__navigator--right {
+  right: 0;
+}
+
 .meeting__container__participant__info--muted::before {
   content: "\f539";
   color: var(--alarm-color);
@@ -176,12 +187,6 @@ main {
   top: 50%;
   transform: translateY(-50%);
 }
-.action-bar__button__content__icon__number::after {
-  content: "28";
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 13px;
-  vertical-align: top;
-}
 
 .action-bar__button--end {
   background-color: var(--secondary-background-selected);
@@ -198,9 +203,4 @@ main {
 
 .action-bar__button__content__icon--action {
   color: var(--action-color);
-}
-.meeting__container__participant:hover
-  .meeting__container__participant__info::before {
-  content: "\f3c9";
-  color: var(--primary-text);
 }
