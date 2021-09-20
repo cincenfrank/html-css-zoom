@@ -4,7 +4,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
-  border: 1px solid green;
+  /* border: 1px solid green; */
 }
 
 /* VARIABLES */
@@ -39,12 +39,14 @@ main {
 /* CLASSES */
 .view-bar {
   text-align: right;
+  padding: 10px;
 }
 
 .action-bar {
   display: flex;
   justify-content: space-between;
   background-color: var(--secondary-background);
+  overflow: auto;
 }
 .meeting {
   height: 100%;
@@ -67,20 +69,35 @@ main {
   color: var(--primary-text);
   padding: 10px;
   border-radius: 10px;
+  border: none;
+  transition: background-color 0.3s;
+}
+.action-bar__button:hover,
+.view-bar__button:hover {
+  background-color: var(--secondary-background-selected);
+  cursor: pointer;
 }
 .action-bar__button {
   background-color: var(--secondary-background);
   color: var(--secondary-text);
-  padding: 10px;
+  padding: 10px 20px 2px;
+  border: none;
+  transition: all 0.3s;
 }
 .meeting__navigator {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  padding: 10px;
+  padding: 20px;
   text-align: center;
   z-index: 2;
   background-color: var(--participant-detail-background);
+}
+.meeting__navigator:hover {
+  cursor: pointer;
+}
+.meeting__navigator:hover > .meeting__navigator__icon {
+  color: var(--navigation-color-selected);
 }
 .meeting__navigator__icon {
   font-size: 40px;
@@ -99,6 +116,10 @@ main {
 .action-bar__button__content__icon {
   font-size: 30px;
 }
+.action-bar__input-bar,
+.action-bar__commands-bar {
+  display: flex;
+}
 
 /* MODIFIERS */
 .meeting__navigator--left {
@@ -115,6 +136,10 @@ main {
   flex-shrink: 0;
   position: relative;
   border: 5px solid transparent;
+  transition: all 0.3s;
+}
+.meeting__container__participant:hover {
+  border: 5px solid greenyellow;
 }
 .meeting__container__participant__info {
   position: absolute;
@@ -143,4 +168,26 @@ main {
   content: "\f077";
   vertical-align: middle;
   padding-left: 15px;
+}
+
+.action-bar__button--end {
+  background-color: var(--secondary-background-selected);
+  color: var(--alarm-color);
+  font-weight: bold;
+  font-size: 16px;
+  height: 100%;
+}
+
+.action-bar__button--end:hover {
+  background-color: var(--alarm-color);
+  color: var(--primary-background);
+}
+
+.action-bar__button__content__icon--action {
+  color: var(--action-color);
+}
+.meeting__container__participant:hover
+  .meeting__container__participant__info::before {
+  content: "\f3c9";
+  color: var(--primary-text);
 }
