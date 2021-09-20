@@ -119,6 +119,7 @@ main {
 .action-bar__input-bar,
 .action-bar__commands-bar {
   display: flex;
+  position: relative;
 }
 
 /* MODIFIERS */
@@ -161,6 +162,9 @@ main {
   content: "\f539";
   color: var(--alarm-color);
 }
+.action-bar__button--expandable {
+  padding-right: 30px;
+}
 
 .action-bar__button--expandable::after {
   font-family: "Font Awesome 5 Free";
@@ -168,6 +172,15 @@ main {
   content: "\f077";
   vertical-align: middle;
   padding-left: 15px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.action-bar__button__content__icon__number::after {
+  content: "28";
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  vertical-align: top;
 }
 
 .action-bar__button--end {
