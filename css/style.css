@@ -182,6 +182,17 @@ main {
   top: 50%;
   transform: translateY(-50%);
 }
+.command-bar__button__icon--muted::after {
+  content: "|";
+  color: var(--alarm-color);
+  position: absolute;
+  left: 25px;
+  top: -5px;
+  transform: rotateZ(25deg);
+  text-align: start;
+  font-weight: bold;
+  font-size: 50px;
+}
 
 .command-bar__button__icon--numbered::after {
   content: "28";
